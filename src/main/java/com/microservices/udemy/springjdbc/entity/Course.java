@@ -1,7 +1,12 @@
-package com.microservices.udemy.springjdbc;
+package com.microservices.udemy.springjdbc.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
 
+	@Id
 	private long id;
 	private String name;
 	private String author;

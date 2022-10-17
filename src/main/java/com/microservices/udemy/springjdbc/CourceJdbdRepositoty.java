@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.microservices.udemy.springjdbc.entity.Course;
+
 @Repository
 public class CourceJdbdRepositoty {
 
@@ -28,7 +30,8 @@ public class CourceJdbdRepositoty {
 	public void deletByid(long id) {
 		springJdbcTemplate.update(DELETE_QUERY, id);
 	}
+
 	public List<Course> selectByid(String name) {
-		return springJdbcTemplate.query(SELECT_QUERY, new BeanPropertyRowMapper(Course.class),name);
+		return springJdbcTemplate.query(SELECT_QUERY, new BeanPropertyRowMapper(Course.class), name);
 	}
 }
